@@ -16,7 +16,7 @@ def loan():
         interest_rate = request.form['interest_rate']
 
         # Insert the new loan info into the database
-        cursor.execute('INSERT INTO loan_info (loan_amount, term_years, interest_rate) VALUES (%s, %s)', (loan_amount, term_years, interest_rate))
+        cursor.execute('INSERT INTO loan_info (loan_amount, term_years, interest_rate) VALUES (%s, %s, %s)', (loan_amount, term_years, interest_rate))
         db.commit()
 
         flash('New loan information added successfully!', 'success')
