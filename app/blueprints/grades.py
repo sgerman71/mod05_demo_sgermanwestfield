@@ -27,7 +27,7 @@ def grade():
             letter_grade = "you suck"
         # Insert the new grade info into the database
         cursor.execute('INSERT INTO grades (letter_grade, student_name) VALUES (%s, %s)', (letter_grade, student_name))
-
+        db.commit()
         return redirect(url_for('grades.grade'))
 
     # Handle GET request to display all grades
