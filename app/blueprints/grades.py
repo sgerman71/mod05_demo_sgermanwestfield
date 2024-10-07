@@ -12,6 +12,9 @@ def grade():
     if request.method == 'POST':
         number_grade = request.form['number_grade']
         student_name = request.form['student_name']
+
+        number_grade = int(number_grade)
+
         if number_grade >= 90:
             letter_grade = "A"
         elif number_grade >= 80:
